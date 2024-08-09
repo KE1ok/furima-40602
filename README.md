@@ -28,8 +28,8 @@
 
 ### Association
 
-- belongs_to :users
-- belongs_to :items
+- belongs_to :user
+- belongs_to :item
 
 ## items テーブル
 
@@ -47,9 +47,9 @@
 
 ### Association
 
-- belongs_to :users
+- belongs_to :user
 - has_many :comments
-- has_one :purchases
+- has_one :purchase
 
 ## purchases テーブル
 
@@ -60,11 +60,11 @@
 
 ### Association
 
-- belongs_to :users
+- belongs_to :user
 - has_one :items
 - has_one :area_date
 
-## area_date テーブル
+## area_dates テーブル
 
 | Column              | Type       | Options         |
 | ------------------- | ---------- | --------------- |
@@ -78,5 +78,5 @@
 
 ### Association
 
-- belongs_to :users
-- has_one : purchases
+- belongs_to :user
+- has_one : purchase
