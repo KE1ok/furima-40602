@@ -39,10 +39,11 @@
 | title               | string     | null: false     |
 | price               | integer    | null: false     |
 | user                | references | null: false, foreign_key: true |
-| category            | text       | null: false     |
-| condition           | text       | null: false     |
-| shipping_fee        | string     | null: false     |
-| prefecture          | string     | null: false     |
+| category_id         | integer    | null: false     |
+| condition_id        | integer    | null: false     |
+| shipping_fee_id     | integer    | null: false     |
+| prefecture_id       | integer    | null: false     |
+| shipping_date_id    | integer    | null: false     |
 
 ### Association
 
