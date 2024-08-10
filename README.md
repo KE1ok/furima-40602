@@ -23,7 +23,7 @@
 | Column              | Type       | Options         |
 | ------------------- | ---------- | --------------- |
 | item_name           | string     | null: false     |
-| title               | string     | null: false     |
+| title               | text       | null: false     |
 | price               | integer    | null: false     |
 | user                | references | null: false, foreign_key: true |
 | category_id         | integer    | null: false     |
