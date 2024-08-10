@@ -62,9 +62,9 @@
 
 - belongs_to :user
 - has_one :items
-- has_one :area_date
+- has_one :area_data
 
-## area_dates テーブル
+## area_datas テーブル
 
 | Column              | Type       | Options         |
 | ------------------- | ---------- | --------------- |
