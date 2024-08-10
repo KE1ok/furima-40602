@@ -59,5 +59,5 @@
 | municipalities      | string     | null: false     |
 | street              | string     | null: false     |
 | building_name       | string     |                 |
-| telephone           | integer    | null: false     |
+| telephone           | string     | null: false     |
 | purchase            | references | null: false, foreign_key: true |
