@@ -61,7 +61,3 @@
 | building_name       | string     |                 |
 | telephone           | integer    | null: false     |
 | purchase            | references | null: false, foreign_key: true |
-
-### Association
-
-- has_one : purchase
