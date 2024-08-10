@@ -72,7 +72,7 @@
 | prefecture_id       | integer    | null: false     |
 | municipalities      | string     | null: false     |
 | street              | string     | null: false     |
-| building_name       | string     | null: false     |
+| building_name       | string     |                 |
 | telephone           | integer    | null: false     |
 | user                | references | null: false, foreign_key: true |
 
