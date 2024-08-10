@@ -15,23 +15,9 @@
 
 ### Association
 
-- has_many :comments
 - has_many :items
 - has_many :purchases
 - has_many :area_date
-
-## comments テーブル
-
-| Column              | Type       | Options         |
-| ------------------- | ---------- | --------------- |
-| comment             | text       | null: false     |
-| item                | references | null: false, foreign_key: true |
-| user                | references | null: false, foreign_key: true |
-
-### Association
-
-- belongs_to :user
-- belongs_to :item
 
 ## items テーブル
 
@@ -50,7 +36,6 @@
 ### Association
 
 - belongs_to :user
-- has_many :comments
 - has_one :purchase
 
 ## purchases テーブル
