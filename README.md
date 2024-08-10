@@ -47,7 +47,7 @@
 ### Association
 
 - belongs_to :user
-- has_one :items
+- has_one :item
 - has_one :area_data
 
 ## area_datas テーブル
