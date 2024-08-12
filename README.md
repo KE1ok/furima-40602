@@ -11,7 +11,7 @@
 | first_name          | string   | null: false     |
 | last_ruby           | string   | null: false     |
 | first_ruby          | string   | null: false     |
-| birthday            | integer  | null: false     |
+| birthday            | date     | null: false     |
 
 ### Association
 
