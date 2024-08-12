@@ -47,7 +47,7 @@
 ### Association
 
 - belongs_to :user
-- has_one :item
+- belongs_to :item
 - has_one :area_data
 
 ## area_datas テーブル
@@ -61,3 +61,7 @@
 | building_name       | string     |                 |
 | telephone           | string     | null: false     |
 | purchase            | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :purchase
