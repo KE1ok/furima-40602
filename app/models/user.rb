@@ -10,4 +10,17 @@ class User < ApplicationRecord
   validates :last_ruby, format: { with: /\A[ァ-ヶー]+\z/ }, presence: true
   validates :first_ruby, format: { with: /\A[ァ-ヶー]+\z/ }, presence: true
   validates :birthday, presence: true
+
+  validate :password_must_be_alphanumeric
+
+  private
+
+  # 半角英数字混合のバリデーション
+  def password_must_be_alphanumeric
+    return if password.blank? # パスワードが空の場合はバリデーションをスキップ
+
+    unless password.match?(/\A(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]+\z/)
+      errors.add(:password, 'must be a mix of letters and numbers')
+    end
+  end
 end
