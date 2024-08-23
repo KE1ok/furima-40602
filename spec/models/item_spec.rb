@@ -80,6 +80,11 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include('User must exist')
       end
+      it 'priceが半角数字以外では保存できない' do
+        @item.price = '３３３'
+        @item.valid?
+        expect(@item.errors.full_messages).to include('Price must be an integer between 300 and 9,999,999')
+      end
     end
   end
 end
