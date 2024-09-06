@@ -1,24 +1,29 @@
 class PurchasesController < ApplicationController
-  before_action :authenticate_user!, except: :index
+  before_action :authenticate_user!, only: [:index]
+  before_action :set_item, only: [:index, :create]
 
   def index
-    @item = Item.find(params[:item_id])
+    @purchase_area_datum = PurchaseAreaDatum.new
   end
 
   def create
-    @purchase = Purchase.new
-    @purchase = Purchase.create(purchase_params)
-    AreaDatum.create(area_datum_params)
-    redirect_to root_path
+    @purchase_area_datum = PurchaseAreaDatum.new(purchase_params)
+    if @purchase_area_datum.valid?
+      @purchase_area_datum.save
+      redirect_to root_path
+    else
+      render :index, status: :unprocessable_entity
+    end
   end
 
   private
 
-  def purchase_params
-    params.permit(:item_id).merge(user_id: current_user.id)
+  def set_item
+    @item = Item.find(params[:item_id])
   end
 
-  def area_datum_params
-    params.permit(:postal_code, :prefecture_id, :municipalities, :street, :building_name, :telephone).merge(purchase_id: @purchase.id)
+  def purchase_params
+    params.require(:purchase_area_datum).permit(:postal_code, :prefecture, :municipalities, :street, :building_name, :telephone)
   end
+
 end
