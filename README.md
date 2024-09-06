@@ -50,7 +50,7 @@
 - belongs_to :item
 - has_one :area_data
 
-## area_datas テーブル
+## area_data テーブル
 
 | Column              | Type       | Options         |
 | ------------------- | ---------- | --------------- |
