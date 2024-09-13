@@ -32,7 +32,7 @@ RSpec.describe PurchaseAreaDatum, type: :model do
         expect(@purchase_area_datum.errors.full_messages).to include("Postal code は3桁-4桁のハイフンを含む半角数字で入力してください")
       end
       it 'prefectureを選択していないと保存できないこと' do
-        @purchase_area_datum.prefecture = 1
+        @purchase_area_datum.prefecture_id = 1
         @purchase_area_datum.valid?
         expect(@purchase_area_datum.errors.full_messages).to include("Prefecture can't be blank")
       end
@@ -65,6 +65,16 @@ RSpec.describe PurchaseAreaDatum, type: :model do
         @purchase_area_datum.telephone = "090-1111-2222"
         @purchase_area_datum.valid?
         expect(@purchase_area_datum.errors.full_messages).to include("Telephone can't be blank")
+      end
+      it 'priceが空では登録できないこと' do
+        @purchase_area_datum.price = nil
+        @purchase_area_datum.valid?
+        expect(@purchase_area_datum.errors.full_messages).to include("Price can't be blank")
+      end
+      it 'tokenが空では登録できないこと' do
+        @purchase_area_datum.token = nil
+        @purchase_area_datum.valid?
+        expect(@purchase_area_datum.errors.full_messages).to include("Token can't be blank")
       end
     end
   end
