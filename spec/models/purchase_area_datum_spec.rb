@@ -18,9 +18,7 @@ RSpec.describe PurchaseAreaDatum, type: :model do
     end
 
     context '内容に問題がある場合' do
-      it '配送先の住所情報も購入の都度入力させること' do
-        
-      end
+
       it 'postal_codeが空だと保存できないこと' do
         @purchase_area_datum.postal_code = ''
         @purchase_area_datum.valid?
