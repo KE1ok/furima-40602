@@ -23,8 +23,8 @@ class User < ApplicationRecord
   def password_must_be_alphanumeric
     return if password.blank? # パスワードが空の場合はバリデーションをスキップ
 
-    unless password.match?(/\A(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]+\z/)
-      errors.add(:password, 'must be a mix of letters and numbers')
-    end
+    return if password.match?(/\A(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]+\z/)
+
+    errors.add(:password, 'must be a mix of letters and numbers')
   end
 end

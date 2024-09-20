@@ -16,7 +16,7 @@ RSpec.describe Item, type: :model do
       it 'imageが空では保存できない' do
         @item.image = nil
         @item.valid?
-        expect(@item.errors.full_messages).to include("Image を添付してください")
+        expect(@item.errors.full_messages).to include('Image を添付してください')
       end
 
       it 'item_nameが空では登録できない' do
@@ -63,17 +63,17 @@ RSpec.describe Item, type: :model do
       it 'priceが300円より低いと登録できない' do
         @item.price = 299
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price must be an integer between 300 and 9,999,999")
+        expect(@item.errors.full_messages).to include('Price must be an integer between 300 and 9,999,999')
       end
       it 'priceが9,999,999円より高いと登録できない' do
-        @item.price = 10000000
+        @item.price = 10_000_000
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price must be an integer between 300 and 9,999,999")
+        expect(@item.errors.full_messages).to include('Price must be an integer between 300 and 9,999,999')
       end
       it 'priceの値が小数点以下を含む場合は登録できない' do
         @item.price = 999.99
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price must be an integer between 300 and 9,999,999")
+        expect(@item.errors.full_messages).to include('Price must be an integer between 300 and 9,999,999')
       end
       it 'userが紐付いていないと保存できない' do
         @item.user = nil
